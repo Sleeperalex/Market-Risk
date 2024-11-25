@@ -80,7 +80,6 @@ def black_scholes_call_price(S, K, T, r, sigma):
 
 
 def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     data = pd.read_csv('natixis_stock.csv', delimiter='\t', names=['Date', 'Price'])
     data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
     data['Price'] = data['Price'].str.replace(',', '.').astype(float)

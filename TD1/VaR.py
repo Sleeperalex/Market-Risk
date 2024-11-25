@@ -3,10 +3,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import norm
-import os
 
 def main():
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     data = pd.read_csv('natixis_stock.csv', delimiter='\t', names=['Date', 'Price'])
     data['Date'] = pd.to_datetime(data['Date'], format='%d/%m/%Y')
     data['Price'] = data['Price'].str.replace(',', '.').astype(float)
